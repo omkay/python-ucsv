@@ -32,7 +32,7 @@ class mysql_tsv(csv.Dialect):
 setattr(csv.excel, 'encoding', 'utf-8')
 setattr(csv.excel_tab, 'encoding', 'utf-16')
 
-encode = lambda e: unicode(e).encode('utf-8') if e is not None else ''
+encode = lambda e: unicode(e).decode('utf-8').encode('utf-8') if e is not None else ''
 decode = lambda e: e.decode('utf-8') if e is not None else u''
 
 try:
